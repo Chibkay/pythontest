@@ -1,6 +1,6 @@
+from time import sleep
 import sys
 import pygame
-from time import sleep
 from bullet import Bullet
 from alien import Alien
 from stars import Star

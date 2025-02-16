@@ -1,6 +1,7 @@
 import pygame
 from pygame.sprite import Sprite
 
+
 class Ship(Sprite):
     def __init__(self, ai_settings, screen):
         """Initialize the ship and set its starting position."""
@@ -29,15 +30,15 @@ class Ship(Sprite):
         if self.moving_right and self.rect.right < self.screen_rect.right:
             self.centerx += self.ai_settings.ship_speed_factor
         if self.moving_left and self.rect.left > 0:
-            self.centerx -= self.ai_settings.ship_speed_factor   
+            self.centerx -= self.ai_settings.ship_speed_factor
         if self.moving_down and self.rect.bottom < self.screen_rect.bottom:
             self.centery += self.ai_settings.ship_speed_factor
         if self.moving_up and self.rect.top > 0:
-           self.centery -= self.ai_settings.ship_speed_factor
+            self.centery -= self.ai_settings.ship_speed_factor
         # Update rect object from self.center.
         self.rect.centerx = self.centerx
-        self.rect.centery = self.centery   
-    
+        self.rect.centery = self.centery
+
     def blitme(self):
         """Draw the ship at its current location."""
         self.screen.blit(self.image, self.rect)

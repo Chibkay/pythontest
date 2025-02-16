@@ -1,9 +1,10 @@
 import sys
-from bullet import Bullet
 import pygame
+from time import sleep
+from bullet import Bullet
 from alien import Alien
 from stars import Star
-from time import sleep
+
 
 
 def check_keydown_events(event, ai_settings, screen, ship, bullets):
@@ -59,7 +60,8 @@ def check_events(ai_settings, screen, stats, sb, play_button, ship, aliens, bull
                               play_button, ship, aliens, bullets, mouse_x, mouse_y)
 
 
-def check_play_button(ai_settings, screen, stats, sb, play_button, ship, aliens,  bullets, mouse_x, mouse_y):
+def check_play_button(ai_settings, screen, stats, sb, play_button, ship,
+                       aliens,  bullets, mouse_x, mouse_y):
     """Start a new game when the player clicks Play."""
     button_clicked = play_button.rect.collidepoint(mouse_x, mouse_y)
     if button_clicked and not stats.game_active:
@@ -261,7 +263,8 @@ def update_stars(ai_settings, stars):
             stars.remove(star)
 
 
-def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, stars, play_button):
+def update_screen(ai_settings, screen, stats, sb, ship, aliens,
+                   bullets, stars, play_button):
     """Update images on the screen and flip to the new screen."""
     # Redraw the screen during each pass through the loop.
     screen.fill(ai_settings.bg_color)

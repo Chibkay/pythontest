@@ -31,7 +31,7 @@ class Alien(Sprite):
         screen_rect = self.screen.get_rect()
         if self.rect.right >= screen_rect.right:
             return True
-        elif self.rect.left <= 0:
+        if self.rect.left <= 0:
             return True
         return False
 
@@ -46,6 +46,6 @@ class Alien(Sprite):
         screen_rect = self.screen.get_rect()
         if self.rect.right >= screen_rect.right:
             return True
-        elif self.rect.left <= 0:
+        if self.rect.left <= 0:
             return True
         return False
